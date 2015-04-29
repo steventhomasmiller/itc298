@@ -3,5 +3,20 @@
   <body>
     <span class="login">Hello, {{user}}.</span>
     <h1>Welcome to Pizza.com</h1>
+    <form action="/order" method="POST">
+      <input name="pizza">
+      <select name="size">
+        <option name="l">Large</option>
+        <option name="s">Small</option>
+      </select>
+      <label for="phone">Phone number</label>
+      <input name="phone">
+      <input type="submit">
+    </form>
+    <ul>
+    {{#each pizzas}}
+    <li> {{pizza}} - {{phone}}
+    {{/each}}
+  </ul>
   </body>
 </html>
