@@ -9,3 +9,13 @@ server.connection({ //configuring the server
 server.start(function() {
   console.log(server.info);
 });
+
+server.route({
+  method: "GET",
+  path: "/{name}",
+  handler: function(request, reply) {
+    //console.log(request.headers);
+    console.log(request.params);
+    reply("Hello, " + request.params.name + ", from Hapi.js.");
+  }
+});
